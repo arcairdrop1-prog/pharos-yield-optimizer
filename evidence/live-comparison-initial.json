@@ -1,1 +1,15 @@
-
+{
+  "status": "HISTORICAL",
+  "note": "Preserved initial live checkpoint captured before engine 1.1.0 added settlement-delay and allowance-state modeling.",
+  "capturedAt": "2026-10-18T20:21:56.126Z",
+  "chainId": 1672,
+  "endBlock": 20597634,
+  "startBlock": 19995777,
+  "elapsedSeconds": 604800,
+  "sources": [
+    { "id": "centrifuge-jtrsy", "startAssetsRaw": "1119074", "endAssetsRaw": "1119288", "observedReturnPercent": "0.01912295" },
+    { "id": "centrifuge-hyb", "startAssetsRaw": "981773", "endAssetsRaw": "988120", "observedReturnPercent": "0.64648345" },
+    { "id": "morpho-rockawayx-usdc", "startAssetsRaw": "1005805", "endAssetsRaw": "1006577", "observedReturnPercent": "0.07675444" }
+  ],
+  "readOnly": true
+}
