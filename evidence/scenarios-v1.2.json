@@ -1,1 +1,64 @@
-
+{
+  "engineVersion": "1.2.0",
+  "mode": "SIMULATED",
+  "label": "DETERMINISTIC ENGINE TESTS — NOT LIVE YIELD",
+  "scenarios": [
+    {
+      "id": "simulated-move",
+      "fixture": "profitable",
+      "decision": "RECOMMEND_MOVE",
+      "destination": "morpho-rockawayx-usdc",
+      "incrementalNetGainUsdc": "468.236753",
+      "investedPrincipalRaw": "9999000000",
+      "reasonCodes": []
+    },
+    {
+      "id": "costs-erase-spread",
+      "fixture": "costs",
+      "decision": "STAY_PUT",
+      "destination": "morpho-rockawayx-usdc",
+      "incrementalNetGainUsdc": "-94.486318",
+      "investedPrincipalRaw": "9900000000",
+      "reasonCodes": [
+        "NET_GAIN_NOT_ABOVE_THRESHOLD",
+        "IMPROVEMENT_BPS_NOT_ABOVE_MINIMUM"
+      ]
+    },
+    {
+      "id": "short-horizon",
+      "fixture": "profitable",
+      "decision": "STAY_PUT",
+      "destination": "morpho-rockawayx-usdc",
+      "incrementalNetGainUsdc": "-1.011032",
+      "investedPrincipalRaw": "9990000000",
+      "reasonCodes": [
+        "HORIZON_BELOW_MINIMUM",
+        "NET_GAIN_NOT_ABOVE_THRESHOLD",
+        "IMPROVEMENT_BPS_NOT_ABOVE_MINIMUM"
+      ]
+    },
+    {
+      "id": "below-threshold",
+      "fixture": "profitable",
+      "decision": "STAY_PUT",
+      "destination": "morpho-rockawayx-usdc",
+      "incrementalNetGainUsdc": "105.596539",
+      "investedPrincipalRaw": "9990000000",
+      "reasonCodes": [
+        "NET_GAIN_NOT_ABOVE_THRESHOLD"
+      ]
+    },
+    {
+      "id": "missing-source",
+      "fixture": "missing",
+      "decision": "INSUFFICIENT_DATA",
+      "destination": "morpho-rockawayx-usdc",
+      "incrementalNetGainUsdc": "6.695539",
+      "investedPrincipalRaw": "9990000000",
+      "reasonCodes": [
+        "SOURCE_UNAVAILABLE",
+        "NET_GAIN_NOT_ABOVE_THRESHOLD"
+      ]
+    }
+  ]
+}
