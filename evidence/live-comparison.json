@@ -1,1 +1,37 @@
-
+{
+  "schemaVersion": 1,
+  "engineVersion": "1.1.0",
+  "mode": "LIVE",
+  "capturedAt": "2026-10-18T21:30:23.635Z",
+  "network": "Pharos Pacific Mainnet",
+  "chainId": 1672,
+  "mcpEndpoint": "https://mcp.pharos.xyz/mcp",
+  "mcpToolsUsed": ["get_chain_info", "get_block_number", "get_block", "get_code", "eth_call", "get_gas_price"],
+  "block": { "number": 20601968, "hash": "0x9680fa07e6e8989f486e39edbec7d6ba4acc70cac7df08a0a5e3d9bd7b730d35", "timestamp": 1792358993 },
+  "window": { "targetSeconds": 604800, "startBlock": 20000115, "startHash": "0xefe2c3e5e8061553ca9984add3f9d1439a4a279ddee0fcfe6f845338a3e1aa3d", "startTimestamp": 1791754192, "endBlock": 20601968, "endTimestamp": 1792358993, "elapsedSeconds": 604801 },
+  "gas": { "gasPriceWei": "10000000000", "gasPriceGwei": "10", "method": "get_gas_price", "blockNumber": 20601968 },
+  "sources": [
+    {
+      "id": "centrifuge-jtrsy", "protocol": "Centrifuge", "name": "JTRSY / USDC", "vault": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434", "share": "0xc18e6f730896971a79d748e8dea61067a9bc6040", "shareDecimals": 6, "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815", "assetDecimals": 6, "fixedShareRaw": "1000000", "startAssetsRaw": "1119074", "endAssetsRaw": "1119288", "observedReturnRaw": "191229534", "observedReturnScale": 12, "observedReturnPercent": "0.01912295", "codeBytes": { "vault": 12018, "share": 7448, "asset": 1798 }, "methods": ["get_code", "asset", "share", "decimals", "convertToAssets"], "startObservation": { "block": 20000115, "timestamp": 1791754192 }, "endObservation": { "block": 20601968, "timestamp": 1792358993 }
+    },
+    {
+      "id": "centrifuge-hyb", "protocol": "Centrifuge", "name": "HYB / USDC", "vault": "0x74189e017d3aefee48f3cc5bf592694b2a016da8", "share": "0x4827c7ecce4f07adfe44a97165f06a199e7d2505", "shareDecimals": 18, "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815", "assetDecimals": 6, "fixedShareRaw": "1000000000000000000", "startAssetsRaw": "981773", "endAssetsRaw": "988120", "observedReturnRaw": "6464834539", "observedReturnScale": 12, "observedReturnPercent": "0.64648345", "codeBytes": { "vault": 12018, "share": 7448, "asset": 1798 }, "methods": ["get_code", "asset", "share", "decimals", "convertToAssets"], "startObservation": { "block": 20000115, "timestamp": 1791754192 }, "endObservation": { "block": 20601968, "timestamp": 1792358993 }
+    },
+    {
+      "id": "morpho-rockawayx-usdc", "protocol": "Morpho", "name": "RockawayX USDC V2", "vault": "0x047cd0a91e9b92ed979189a6c8a120bf280f02e5", "share": "0x047cd0a91e9b92ed979189a6c8a120bf280f02e5", "shareDecimals": 18, "asset": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815", "assetDecimals": 6, "fixedShareRaw": "1000000000000000000", "startAssetsRaw": "1005811", "endAssetsRaw": "1006583", "observedReturnRaw": "767539826", "observedReturnScale": 12, "observedReturnPercent": "0.07675398", "codeBytes": { "vault": 21808, "share": 21808, "asset": 1798 }, "methods": ["get_code", "asset", "decimals", "convertToAssets"], "startObservation": { "block": 20000115, "timestamp": 1791754192 }, "endObservation": { "block": 20601968, "timestamp": 1792358993 }
+    }
+  ],
+  "analysis": {
+    "input": { "capitalUsdc": "10000", "currentSource": "idle", "horizonDays": 90, "minimumHoldingDays": 30, "minimumNetGainUsdc": "10", "minimumImprovementBps": 5, "entryFeeBpsAssumed": 10, "exitFeeBpsAssumed": 10, "gasUnitsApproval": 65000, "gasUnitsRequest": 260000, "gasUnitsClaim": 180000, "gasSafetyBufferBps": 2500, "assumedProsPriceUsdc": "0.5", "approvalRequired": true, "asyncEntryDelayDaysAssumed": 2, "asyncExitDelayDaysAssumed": 2, "maximumDataAgeMinutes": 60 },
+    "conditional": true,
+    "currentSource": "idle",
+    "destination": "centrifuge-hyb",
+    "decision": "RECOMMEND_MOVE",
+    "reasonCodes": [],
+    "costs": { "entryFeeRaw": "10000000", "exitFeeRaw": "0", "gasCostRaw": "3157", "gasUnits": "631250", "gasWei": "6312500000000000", "transitionDelayDays": "2" },
+    "results": { "stayingFinalRaw": "10000000000", "movingFinalRaw": "10802717550", "grossAdvantageRaw": "812720707", "incrementalNetGainRaw": "802717550", "improvementBps": "802", "breakEvenDays": 4, "earningSeconds": "7603200" },
+    "assumptions": ["Entry fee 10 bps ASSUMED", "Exit fee 10 bps ASSUMED", "PROS price 0.5 USDC ASSUMED", "Gas units and 2500 bps buffer ASSUMED", "Approval required in modeled allowance state", "Async entry/exit non-earning delays 2/2 days ASSUMED when applicable"],
+    "disclosure": "Illustrative hypothetical capital. Historical share-value performance is not APY, guaranteed return, proof of eligibility, or a verified wallet position. The recommendation is conditional on all displayed assumptions."
+  },
+  "readOnly": true
+}
