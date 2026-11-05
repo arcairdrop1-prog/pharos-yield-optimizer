@@ -1,1 +1,13 @@
 
+{
+  "engineVersion": "1.1.0",
+  "mode": "SIMULATED",
+  "label": "DETERMINISTIC ENGINE TESTS — NOT LIVE YIELD",
+  "scenarios": [
+    { "id": "simulated-move", "fixture": "profitable", "decision": "RECOMMEND_MOVE", "incrementalNetGainUsdc": "468.283682", "reasonCodes": [], "purpose": "Positive branch after costs." },
+    { "id": "costs-erase-spread", "fixture": "costs", "decision": "STAY_PUT", "incrementalNetGainUsdc": "-94.430604", "reasonCodes": ["NET_GAIN_NOT_ABOVE_THRESHOLD", "IMPROVEMENT_BPS_NOT_ABOVE_MINIMUM"] },
+    { "id": "short-horizon", "fixture": "profitable", "decision": "STAY_PUT", "incrementalNetGainUsdc": "-1.002032", "reasonCodes": ["HORIZON_BELOW_MINIMUM", "NET_GAIN_NOT_ABOVE_THRESHOLD", "IMPROVEMENT_BPS_NOT_ABOVE_MINIMUM"] },
+    { "id": "below-threshold", "fixture": "profitable", "decision": "STAY_PUT", "incrementalNetGainUsdc": "105.712253", "minimumNetGainUsdc": "10000", "reasonCodes": ["NET_GAIN_NOT_ABOVE_THRESHOLD"] },
+    { "id": "missing-source", "fixture": "missing", "decision": "INSUFFICIENT_DATA", "reasonCodes": ["SOURCE_UNAVAILABLE", "NET_GAIN_NOT_ABOVE_THRESHOLD"] }
+  ]
+}
