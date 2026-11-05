@@ -1,1 +1,482 @@
-
+{
+  "schemaVersion": 2,
+  "engineVersion": "1.2.0",
+  "label": "CORRECTED LIVE ECONOMIC EVIDENCE — ORIGINAL v1.1 EVIDENCE PRESERVED",
+  "generatedAt": "2026-10-18T22:15:22.019Z",
+  "snapshot": {
+    "schemaVersion": 1,
+    "engineVersion": "1.2.0",
+    "mode": "LIVE",
+    "capturedAt": "2026-10-18T22:15:21.721Z",
+    "network": "Pharos Pacific Mainnet",
+    "chainId": 1672,
+    "mcpEndpoint": "https://mcp.pharos.xyz/mcp",
+    "mcpTools": [
+      "get_chain_info",
+      "get_block_number",
+      "get_block",
+      "get_code",
+      "eth_call",
+      "get_gas_price"
+    ],
+    "block": {
+      "number": 20604787,
+      "hash": "0x0e60013bf3e6ee668e8230ca08b48b19c1497c81b2a1f8598a3c8220c9bb891c",
+      "timestamp": 1792361698
+    },
+    "window": {
+      "targetSeconds": 604800,
+      "startBlock": 20002798,
+      "startTimestamp": 1791756899,
+      "endBlock": 20604787,
+      "endTimestamp": 1792361698,
+      "elapsedSeconds": 604799
+    },
+    "gas": {
+      "gasPriceWei": "10000000000",
+      "gasPriceGwei": "10",
+      "sourceId": "SRC-04"
+    },
+    "sources": [
+      {
+        "id": "centrifuge-jtrsy",
+        "name": "JTRSY / USDC",
+        "protocol": "Centrifuge",
+        "vault": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+        "share": "0xc18e6f730896971a79d748e8dea61067a9bc6040",
+        "shareSymbol": "JTRSY",
+        "shareDecimals": 6,
+        "relationship": "erc7575",
+        "asyncSettlement": true,
+        "permissioned": true,
+        "documentation": "https://docs.centrifuge.io/developer/protocol/deployments/",
+        "feeBasis": "No universal on-chain entry/exit fee was verified; user-configured fee assumptions are required.",
+        "restrictions": "Permissioning and asynchronous request/fulfillment/claim settlement may apply; eligibility and timing are not inferred.",
+        "methodology": "Fixed one-share convertToAssets change over a timestamp-resolved seven-day window.",
+        "status": "ok",
+        "asset": {
+          "symbol": "USDC",
+          "address": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+          "decimals": 6
+        },
+        "fixedShareRaw": "1000000",
+        "start": {
+          "blockNumber": 20002798,
+          "timestamp": 1791756899,
+          "assetsRaw": "1119074",
+          "assetsFormatted": "1.119074",
+          "observationId": "SRC-05"
+        },
+        "end": {
+          "blockNumber": 20604787,
+          "timestamp": 1792361698,
+          "assetsRaw": "1119288",
+          "assetsFormatted": "1.119288",
+          "observationId": "SRC-06"
+        },
+        "elapsedSeconds": 604799,
+        "observedReturnScale": 12,
+        "observedReturnRaw": "191229534",
+        "observedReturnPercent": "0.01912295",
+        "sourceIds": [
+          "SRC-05",
+          "SRC-06"
+        ],
+        "label": "LIVE DATA / HISTORICAL ESTIMATE"
+      },
+      {
+        "id": "centrifuge-hyb",
+        "name": "HYB / USDC",
+        "protocol": "Centrifuge",
+        "vault": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+        "share": "0x4827c7ecce4f07adfe44a97165f06a199e7d2505",
+        "shareSymbol": "HYB",
+        "shareDecimals": 18,
+        "relationship": "erc7575",
+        "asyncSettlement": true,
+        "permissioned": true,
+        "documentation": "https://docs.centrifuge.io/developer/protocol/deployments/",
+        "feeBasis": "No universal on-chain entry/exit fee was verified; user-configured fee assumptions are required.",
+        "restrictions": "Permissioning and asynchronous request/fulfillment/claim settlement may apply; eligibility and timing are not inferred.",
+        "methodology": "Fixed one-share convertToAssets change over a timestamp-resolved seven-day window.",
+        "status": "ok",
+        "asset": {
+          "symbol": "USDC",
+          "address": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+          "decimals": 6
+        },
+        "fixedShareRaw": "1000000000000000000",
+        "start": {
+          "blockNumber": 20002798,
+          "timestamp": 1791756899,
+          "assetsRaw": "981773",
+          "assetsFormatted": "0.981773",
+          "observationId": "SRC-07"
+        },
+        "end": {
+          "blockNumber": 20604787,
+          "timestamp": 1792361698,
+          "assetsRaw": "988120",
+          "assetsFormatted": "0.98812",
+          "observationId": "SRC-08"
+        },
+        "elapsedSeconds": 604799,
+        "observedReturnScale": 12,
+        "observedReturnRaw": "6464834539",
+        "observedReturnPercent": "0.64648345",
+        "sourceIds": [
+          "SRC-07",
+          "SRC-08"
+        ],
+        "label": "LIVE DATA / HISTORICAL ESTIMATE"
+      },
+      {
+        "id": "morpho-rockawayx-usdc",
+        "name": "RockawayX USDC V2",
+        "protocol": "Morpho",
+        "vault": "0x047cd0a91e9b92ed979189a6c8a120bf280f02e5",
+        "share": "0x047cd0a91e9b92ed979189a6c8a120bf280f02e5",
+        "shareSymbol": "roxUSDC",
+        "shareDecimals": 18,
+        "relationship": "erc4626",
+        "asyncSettlement": false,
+        "permissioned": false,
+        "documentation": "https://campaigns.morpho.org/opportunities/11686569320310112064",
+        "feeBasis": "No universal on-chain entry/exit fee was verified; user-configured fee assumptions are required.",
+        "restrictions": "Synchronous ERC-4626 conversion was verified; liquidity, caps, and user eligibility still require current checks.",
+        "methodology": "Fixed one-share ERC-4626 convertToAssets change over a timestamp-resolved seven-day window.",
+        "status": "ok",
+        "asset": {
+          "symbol": "USDC",
+          "address": "0xC879C018dB60520F4355C26eD1a6D572cdAC1815",
+          "decimals": 6
+        },
+        "fixedShareRaw": "1000000000000000000",
+        "start": {
+          "blockNumber": 20002798,
+          "timestamp": 1791756899,
+          "assetsRaw": "1005815",
+          "assetsFormatted": "1.005815",
+          "observationId": "SRC-09"
+        },
+        "end": {
+          "blockNumber": 20604787,
+          "timestamp": 1792361698,
+          "assetsRaw": "1006586",
+          "assetsFormatted": "1.006586",
+          "observationId": "SRC-10"
+        },
+        "elapsedSeconds": 604799,
+        "observedReturnScale": 12,
+        "observedReturnRaw": "766542555",
+        "observedReturnPercent": "0.07665425",
+        "sourceIds": [
+          "SRC-09",
+          "SRC-10"
+        ],
+        "label": "LIVE DATA / HISTORICAL ESTIMATE"
+      }
+    ],
+    "observations": [
+      {
+        "id": "SRC-01",
+        "kind": "chain",
+        "status": "ok",
+        "method": "get_chain_info",
+        "raw": {
+          "name": "Pharos",
+          "chainId": 1672,
+          "chainIdHex": "0x688",
+          "expectedChainId": 1672,
+          "chainIdMatches": true,
+          "latestBlock": "20604787",
+          "latestBlockHex": "0x13a6773",
+          "nativeSymbol": "PROS",
+          "clientVersion": "portal/1.0.0",
+          "rpcUrl": "https://rpc.pharos.xyz"
+        },
+        "interpreted": "Pharos Pacific Mainnet / 1672"
+      },
+      {
+        "id": "SRC-02",
+        "kind": "block",
+        "status": "ok",
+        "method": "get_block",
+        "blockNumber": 20002798,
+        "timestamp": 1791756899,
+        "targetTimestamp": 1791756898,
+        "raw": "0xd080c01853750ba599740824c1edf5129c34d25ca4a37e7600a1de623e0212af"
+      },
+      {
+        "id": "SRC-03",
+        "kind": "block",
+        "status": "ok",
+        "method": "get_block",
+        "blockNumber": 20604787,
+        "timestamp": 1792361698,
+        "raw": "0x0e60013bf3e6ee668e8230ca08b48b19c1497c81b2a1f8598a3c8220c9bb891c"
+      },
+      {
+        "id": "SRC-04",
+        "kind": "gas",
+        "status": "ok",
+        "method": "get_gas_price",
+        "blockNumber": 20604787,
+        "raw": "10000000000",
+        "unit": "wei",
+        "interpreted": "10 gwei"
+      },
+      {
+        "id": "SRC-05",
+        "kind": "yield-point",
+        "status": "ok",
+        "sourceId": "centrifuge-jtrsy",
+        "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+        "method": "convertToAssets",
+        "arguments": [
+          "1000000"
+        ],
+        "blockNumber": 20002798,
+        "timestamp": 1791756899,
+        "raw": "1119074",
+        "decimals": 6,
+        "interpreted": "1.119074 USDC",
+        "relationship": {
+          "asset": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+          "share": "0xc18e6f730896971a79d748e8dea61067a9bc6040"
+        },
+        "codeBytes": {
+          "vault": 12018,
+          "share": 7448,
+          "asset": 1798
+        }
+      },
+      {
+        "id": "SRC-06",
+        "kind": "yield-point",
+        "status": "ok",
+        "sourceId": "centrifuge-jtrsy",
+        "contract": "0x160e0dd4c4f693b05eca83bc2ec6fd51954fc434",
+        "method": "convertToAssets",
+        "arguments": [
+          "1000000"
+        ],
+        "blockNumber": 20604787,
+        "timestamp": 1792361698,
+        "raw": "1119288",
+        "decimals": 6,
+        "interpreted": "1.119288 USDC",
+        "relationship": {
+          "asset": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+          "share": "0xc18e6f730896971a79d748e8dea61067a9bc6040"
+        },
+        "codeBytes": {
+          "vault": 12018,
+          "share": 7448,
+          "asset": 1798
+        }
+      },
+      {
+        "id": "SRC-07",
+        "kind": "yield-point",
+        "status": "ok",
+        "sourceId": "centrifuge-hyb",
+        "contract": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+        "method": "convertToAssets",
+        "arguments": [
+          "1000000000000000000"
+        ],
+        "blockNumber": 20002798,
+        "timestamp": 1791756899,
+        "raw": "981773",
+        "decimals": 6,
+        "interpreted": "0.981773 USDC",
+        "relationship": {
+          "asset": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+          "share": "0x4827c7ecce4f07adfe44a97165f06a199e7d2505"
+        },
+        "codeBytes": {
+          "vault": 12018,
+          "share": 7448,
+          "asset": 1798
+        }
+      },
+      {
+        "id": "SRC-08",
+        "kind": "yield-point",
+        "status": "ok",
+        "sourceId": "centrifuge-hyb",
+        "contract": "0x74189e017d3aefee48f3cc5bf592694b2a016da8",
+        "method": "convertToAssets",
+        "arguments": [
+          "1000000000000000000"
+        ],
+        "blockNumber": 20604787,
+        "timestamp": 1792361698,
+        "raw": "988120",
+        "decimals": 6,
+        "interpreted": "0.98812 USDC",
+        "relationship": {
+          "asset": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+          "share": "0x4827c7ecce4f07adfe44a97165f06a199e7d2505"
+        },
+        "codeBytes": {
+          "vault": 12018,
+          "share": 7448,
+          "asset": 1798
+        }
+      },
+      {
+        "id": "SRC-09",
+        "kind": "yield-point",
+        "status": "ok",
+        "sourceId": "morpho-rockawayx-usdc",
+        "contract": "0x047cd0a91e9b92ed979189a6c8a120bf280f02e5",
+        "method": "convertToAssets",
+        "arguments": [
+          "1000000000000000000"
+        ],
+        "blockNumber": 20002798,
+        "timestamp": 1791756899,
+        "raw": "1005815",
+        "decimals": 6,
+        "interpreted": "1.005815 USDC",
+        "relationship": {
+          "asset": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+          "share": "0x047cd0a91e9b92ed979189a6c8a120bf280f02e5"
+        },
+        "codeBytes": {
+          "vault": 21808,
+          "share": 21808,
+          "asset": 1798
+        }
+      },
+      {
+        "id": "SRC-10",
+        "kind": "yield-point",
+        "status": "ok",
+        "sourceId": "morpho-rockawayx-usdc",
+        "contract": "0x047cd0a91e9b92ed979189a6c8a120bf280f02e5",
+        "method": "convertToAssets",
+        "arguments": [
+          "1000000000000000000"
+        ],
+        "blockNumber": 20604787,
+        "timestamp": 1792361698,
+        "raw": "1006586",
+        "decimals": 6,
+        "interpreted": "1.006586 USDC",
+        "relationship": {
+          "asset": "0xc879c018db60520f4355c26ed1a6d572cdac1815",
+          "share": "0x047cd0a91e9b92ed979189a6c8a120bf280f02e5"
+        },
+        "codeBytes": {
+          "vault": 21808,
+          "share": 21808,
+          "asset": 1798
+        }
+      }
+    ],
+    "readOnly": true
+  },
+  "analysis": {
+    "engineVersion": "1.2.0",
+    "analyzedAt": "2026-10-18T22:15:22.019Z",
+    "input": {
+      "capitalUsdc": "10000",
+      "currentSource": "idle",
+      "horizonDays": 90,
+      "minimumHoldingDays": 30,
+      "minimumNetGainUsdc": "10",
+      "minimumImprovementBps": 5,
+      "entryFeeBpsAssumed": 10,
+      "exitFeeBpsAssumed": 10,
+      "gasUnitsApproval": 65000,
+      "gasUnitsRequest": 260000,
+      "gasUnitsClaim": 180000,
+      "gasSafetyBufferBps": 2500,
+      "assumedProsPriceUsdc": "0.5",
+      "approvalRequired": true,
+      "asyncEntryDelayDaysAssumed": 2,
+      "asyncExitDelayDaysAssumed": 2,
+      "maximumDataAgeMinutes": 60
+    },
+    "mode": "LIVE",
+    "conditional": true,
+    "assumptions": [
+      "Entry fee 10 bps ASSUMED",
+      "Exit fee 10 bps ASSUMED",
+      "PROS price 0.5 USDC ASSUMED",
+      "Gas units and 2500 bps buffer ASSUMED",
+      "Approval required in the modeled allowance state",
+      "Async entry/exit non-earning delays 2/2 days ASSUMED when applicable"
+    ],
+    "currentSource": "idle",
+    "destination": "centrifuge-hyb",
+    "decision": "RECOMMEND_MOVE",
+    "reasonCodes": [],
+    "calculations": {
+      "capitalRaw": "10000000000",
+      "capital": "10000",
+      "horizonSeconds": "7776000",
+      "earningSeconds": "7603200",
+      "transitionDelayDays": "2",
+      "exitProceedsRaw": "10000000000",
+      "investedPrincipalRaw": "9990000000",
+      "investedPrincipal": "9990",
+      "gasFunding": "SEPARATE_NATIVE_BALANCE",
+      "stayingYieldRaw": "0",
+      "stayingFinalRaw": "10000000000",
+      "stayingFinal": "10000",
+      "destinationYieldRaw": "811910676",
+      "movingFinalRaw": "10801907519",
+      "movingFinal": "10801.907519",
+      "grossAdvantageRaw": "811910676",
+      "grossAdvantage": "811.910676",
+      "exitFeeRaw": "0",
+      "entryFeeRaw": "10000000",
+      "gasCostRaw": "3157",
+      "gasUnits": "631250",
+      "gasWei": "6312500000000000",
+      "approvalGasUnits": "65000",
+      "destinationGasUnits": "505000",
+      "exitGasUnits": "0",
+      "incrementalNetGainRaw": "801907519",
+      "incrementalNetGain": "801.907519",
+      "improvementBps": "801",
+      "thresholdRaw": "10000000",
+      "breakEvenDays": 4,
+      "evaluatedRoutes": [
+        {
+          "destination": "centrifuge-hyb",
+          "movingFinalRaw": "10801907519",
+          "investedPrincipalRaw": "9990000000",
+          "destinationYieldRaw": "811910676",
+          "transitionDelayDays": "2",
+          "earningSeconds": "7603200",
+          "gasCostRaw": "3157"
+        },
+        {
+          "destination": "morpho-rockawayx-usdc",
+          "movingFinalRaw": "10088455045",
+          "investedPrincipalRaw": "9990000000",
+          "destinationYieldRaw": "98457077",
+          "transitionDelayDays": "0",
+          "earningSeconds": "7776000",
+          "gasCostRaw": "2032"
+        },
+        {
+          "destination": "centrifuge-jtrsy",
+          "movingFinalRaw": "10014013126",
+          "investedPrincipalRaw": "9990000000",
+          "destinationYieldRaw": "24016283",
+          "transitionDelayDays": "2",
+          "earningSeconds": "7603200",
+          "gasCostRaw": "3157"
+        }
+      ]
+    },
+    "disclosure": "Historical fixed-share performance is an estimate basis, not APY, guaranteed return, risk score, or proof of eligibility. Fee and native-price assumptions make every result conditional."
+  },
+  "readOnly": true
+}
