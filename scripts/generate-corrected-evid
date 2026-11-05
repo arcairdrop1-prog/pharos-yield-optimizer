@@ -1,1 +1,30 @@
+import { writeFile } from "node:fs/promises";
+import { readLiveComparison, deterministicFixture } from "../src/adapters.js";
+import { analyze, DEFAULT_INPUT } from "../src/engine.js";
 
+const snapshot = await readLiveComparison();
+const analysis = analyze(snapshot, DEFAULT_INPUT);
+const live = {
+  schemaVersion: 2,
+  engineVersion: analysis.engineVersion,
+  label: "CORRECTED LIVE ECONOMIC EVIDENCE — ORIGINAL v1.1 EVIDENCE PRESERVED",
+  generatedAt: new Date().toISOString(),
+  snapshot,
+  analysis,
+  readOnly: true
+};
+await writeFile(new URL("../evidence/live-comparison-v1.2.json", import.meta.url), `${JSON.stringify(live, null, 2)}\n`);
+
+const definitions = [
+  ["simulated-move", "profitable", { ...DEFAULT_INPUT, horizonDays: 365, minimumHoldingDays: 30, minimumNetGainUsdc: "1", entryFeeBpsAssumed: 1, exitFeeBpsAssumed: 1 }],
+  ["costs-erase-spread", "costs", { ...DEFAULT_INPUT, horizonDays: 30, minimumHoldingDays: 1, minimumNetGainUsdc: "1", entryFeeBpsAssumed: 100, exitFeeBpsAssumed: 100 }],
+  ["short-horizon", "profitable", { ...DEFAULT_INPUT, horizonDays: 7, minimumHoldingDays: 30 }],
+  ["below-threshold", "profitable", { ...DEFAULT_INPUT, horizonDays: 90, minimumHoldingDays: 30, minimumNetGainUsdc: "10000" }],
+  ["missing-source", "missing", DEFAULT_INPUT]
+];
+const scenarios = definitions.map(([id, fixture, input]) => {
+  const result = analyze(deterministicFixture(fixture), input);
+  return { id, fixture, decision: result.decision, destination: result.destination, incrementalNetGainUsdc: result.calculations.incrementalNetGain, investedPrincipalRaw: result.calculations.investedPrincipalRaw, reasonCodes: result.reasonCodes };
+});
+await writeFile(new URL("../evidence/scenarios-v1.2.json", import.meta.url), `${JSON.stringify({ engineVersion: analysis.engineVersion, mode: "SIMULATED", label: "DETERMINISTIC ENGINE TESTS — NOT LIVE YIELD", scenarios }, null, 2)}\n`);
+console.log(JSON.stringify({ live: { capturedAt: snapshot.capturedAt, block: snapshot.block.number, decision: analysis.decision, destination: analysis.destination, calculations: analysis.calculations }, scenarios }, null, 2));
